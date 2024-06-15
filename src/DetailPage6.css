@@ -1,0 +1,67 @@
+/* src/DetailPage6.css */
+
+/* Style for the header */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+  }
+  
+  /* Style for the container */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    flex-direction: row;
+  }
+  
+  /* Style for the content area */
+  .content {
+    width: 1000px;
+    max-width: 1200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+  }
+  
+  /* Style for the filters section */
+  .filters {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the table */
+  table {
+    width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    table-layout: auto;
+  }
+  
+  /* Style for table header */
+  table th {
+    background-color: #e94560;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Style for table rows */
+  table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    width: 1200px;
+  }
+  
+  /* Hover effect on table rows */
+  table tbody tr:hover {
+    background-color: #1b8bff;
+  }

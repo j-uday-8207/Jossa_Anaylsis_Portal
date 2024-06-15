@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './DetailPage.css';
-import Papa from 'papaparse';
-import Sidebar from './Sidebar';
-import csvFile from './final.csv'; // Ensure this path is correct
+// src/DetailPage6.js
 
-const DetailPage = () => {
-  const [choiceData, setChoiceData] = useState(null);
-  const [filteredData, setFilteredData] = useState(null);
+import React, { useState, useEffect } from 'react';
+import Papa from 'papaparse';
+import Sidebar6 from './Sidebar6';
+import './DetailPage6.css'; // Ensure this file exists in src folder
+import csvFile from './final.csv'; // Ensure final.csv is in src folder
+
+const DetailPage6 = () => {
+  const [choiceData, setChoiceData] = useState({
+    program: '',
+    year: '',
+    seatType: '',
+    gender: '',
+    round: '',
+    rank: '',
+  });
+  const [filteredData, setFilteredData] = useState([]);
   const [originalData, setOriginalData] = useState([]);
 
   useEffect(() => {
@@ -18,11 +27,9 @@ const DetailPage = () => {
         return response.text();
       })
       .then(csvData => {
-         // Log first 100 chars of CSV data
         Papa.parse(csvData, {
           header: true,
           complete: (results) => {
-            // console.log('Parsed CSV data:', results.data);
             setOriginalData(results.data);
           },
           error: (error) => {
@@ -36,16 +43,16 @@ const DetailPage = () => {
   }, []);
 
   useEffect(() => {
-    if (choiceData) {
-      console.log('Filtering with choiceData:', choiceData);
-      
+    if (originalData.length > 0) {
       const filtered = originalData.filter(row =>
-        (row['Institute'] === choiceData.college) &&
-        ( row['SeatType'] === choiceData.seatType) &&
-        ( row['Year'] === choiceData.year) &&
-        (row['Gender'] === choiceData.gender)
+        (!choiceData.program || row['Academic Program Name'] === choiceData.program) &&
+        (!choiceData.year || row['Year'] === choiceData.year) &&
+        (!choiceData.seatType || row['SeatType'] === choiceData.seatType) &&
+        (!choiceData.gender || row['Gender'] === choiceData.gender) &&
+        (!choiceData.round || row['Round'] === choiceData.round) &&
+        (
+          parseInt(row['Closing Rank']) >= parseInt(choiceData.rank))
       );
-      console.log('Filtered data:', filtered);
       setFilteredData(filtered);
     }
   }, [choiceData, originalData]);
@@ -53,26 +60,21 @@ const DetailPage = () => {
   return (
     <div>
       <header className="header">
-        <h1>Josaa Analysis Portal</h1>
+        <h1>College Predictor</h1>
       </header>
       <div className="container">
-        <Sidebar setChoiceData={setChoiceData} />
+        <Sidebar6 setChoiceData={setChoiceData} />
         <div className="content">
-          <h2>Tailor according to your need</h2>
-         
-          {filteredData && (
+          <h2>College Predictions Based on Criteria</h2>
+          
+          {filteredData.length > 0 ? (
             <div>
-              
+             
               <table>
                 <thead>
                   <tr>
-                    <th>Institute</th>
-                    <th>Academic Program Name</th>
-                    <th>Seat Type</th>
-                    <th>Gender</th>
-                    <th>Opening Rank</th>
-                    <th>Closing Rank</th>
-                    <th>Year</th>
+                    <th>Institute Name</th>
+                    <th>Program</th>
                     <th>Round</th>
                   </tr>
                 </thead>
@@ -81,17 +83,14 @@ const DetailPage = () => {
                     <tr key={index}>
                       <td>{row.Institute}</td>
                       <td>{row['Academic Program Name']}</td>
-                      <td>{row['SeatType']}</td>
-                      <td>{row.Gender}</td>
-                      <td>{row['Opening Rank']}</td>
-                      <td>{row['Closing Rank']}</td>
-                      <td>{row.Year}</td>
                       <td>{row.Round}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p>No results found.</p>
           )}
         </div>
       </div>
@@ -99,4 +98,4 @@ const DetailPage = () => {
   );
 }
 
-export default DetailPage;
+export default DetailPage6;

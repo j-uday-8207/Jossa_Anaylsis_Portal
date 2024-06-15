@@ -165,7 +165,7 @@ const DetailPage2 = () => {
       <div className="container">
         <Sidebar handleYearChange={handleYearChange} />
         <div className="content">
-          <h2>Maximum Closing Ranks for Selected Years</h2>
+          <h2>Old vs New</h2>
           <div className="go-back-container">
             <button onClick={handleGoBack} className="go-back-button">&#8592;</button>
           </div>

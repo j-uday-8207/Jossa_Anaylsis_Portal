@@ -148,7 +148,7 @@ const Branches = () => {
       </header>
       <div className="main-container-unique">
         <div className="content-unique">
-          <h2>What is the average rank of students admitted to the IITs in different branches?</h2>
+          <h2>Popularity within the branches</h2>
           <div className="filters-unique">
             <h3>Filter by Program Type:</h3>
             {programTypes.map(type => (
