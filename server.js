@@ -18,6 +18,17 @@ app.use(cors({
 // Route to handle POST requests from frontend
  // Middleware to parse JSON bodies
 
+app.use(cors());
+
+
+
+app.get('/api/choices', (req, res) => {
+  res.sendFile('src/output.json', { root: __dirname });
+});
+
+
+
+
 app.post('/api/data', (req, res) => {
   // Receive data from the frontend
   const data = req.body;

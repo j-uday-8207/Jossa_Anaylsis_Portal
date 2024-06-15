@@ -1,0 +1,137 @@
+/* Style for the main container */
+.main-container-unique {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1c2331;
+  color: #ffffff;
+  border-radius: 8px;
+}
+.go-back-container {
+  position: absolute;
+  top: 20px; /* Adjust top positioning as needed */
+  left: 20px; /* Adjust left positioning as needed */
+}
+
+/* Style for the header */
+.header-unique {
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.header-unique h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #ffffff;
+}
+
+/* Style for the content section */
+.content-unique {
+  padding: 20px;
+}
+
+/* Style for the filter section */
+.filters-unique {
+  margin-bottom: 20px;
+}
+
+.filters-unique h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.filters-unique div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.filters-unique input[type="checkbox"] {
+  display: none;
+}
+
+.filters-unique input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.filters-unique input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filters-unique input[type="checkbox"]:checked + label::before {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.filters-unique input[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 4px;
+  width: 8px;
+  height: 16px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.filters-unique input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+/* Style for the chart container */
+.canvas-container-unique {
+  margin-top: 20px;
+}
+
+.canvas-container-unique h3 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Style for the Line chart */
+.LineChart-unique {
+  background-color: #263238;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Style for the Go Back button */
+.go-back-button {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff; /* Example background color */
+  color: #ffffff; /* Text color */
+  border: none;
+  border-radius: 50%; /* Makes the button circular */
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.go-back-button:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  color: #ffffff;
+}

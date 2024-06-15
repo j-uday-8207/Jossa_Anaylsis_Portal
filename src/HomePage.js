@@ -17,6 +17,7 @@ const cards = [
   {
     title: "Popularity variation among different branches.",
     description: "Uncover the captivating popularity variation among different branches of study. Explore how student preferences have evolved over time, revealing insights into the most sought-after disciplines and their changing demand. Gain a deeper understanding of the trends and make informed decisions about your academic journey based on this analysis.",
+    link: "/BranchesVar"
   },
   {
     title: "What is the trend in the opening and closing ranks for popular branches?",
