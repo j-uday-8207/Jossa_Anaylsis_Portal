@@ -14,7 +14,6 @@ app.use(cors({
 
 // Dummy data (replace with your actual data source)
 
-
 // Route to handle POST requests from frontend
  // Middleware to parse JSON bodies
 

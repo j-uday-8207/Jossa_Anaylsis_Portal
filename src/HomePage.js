@@ -12,7 +12,7 @@ const cards = [
   {
     title: "What is the Popularity Variation between New and Old IITs?",
     description: "Unveil the intriguing popularity variation between the esteemed New and Old IITs. Explore how the preferences of students have shifted over time, offering valuable insights into the reputation and desirability of these premier institutions. Dive into the contrasting dynamics and make informed decisions based on this analysis.",
-    
+    link: "/DetailPage2"
   },
   {
     title: "Popularity variation among different branches.",
