@@ -28,6 +28,18 @@ const cards = [
     description: "Know about specific trends tailored specifically for you. Understand how the reservation system applies for college admission and make informed decisions",
     link: "/DetailPage3"
   },
+  {
+    title: "Old vs New",
+    description: "Understand which is better according to your own priorities.Discover trends and stay ahead of the game!",
+    link: "/DetailPage2"
+  },
+  {
+    title: "Popularity within the branches",
+    description: "Wanna discover how the interests of students in different branches have evolved over the years? Click here and explore away.",
+    link: "/BranchesVar"
+  },
+
+
 ];
 
 const Card = ({ title, description, link }) => (
@@ -51,6 +63,7 @@ const AboutUsModal = ({ onClose }) => (
       <h2>About Us</h2>
       <p>This portal is developed by Uday Jain and Shrutee Prakash Dalai</p>
       <p>Contact us at: j.uday@iitg.ac.in / d.shrutee@iitg.ac.in</p>
+      
     </div>
   </div>
 );

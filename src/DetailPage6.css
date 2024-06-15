@@ -19,16 +19,13 @@
 
 /* Style for the content area */
 .content {
-  width: 1000px;
-  max-width: 1200px;
+  flex-grow: 1;
   margin-top: 20px;
   margin-left: 20px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: calc(100vh - 200px);
+  background-color: #ffffff;
 }
 
 /* Style for the filters section */
@@ -38,7 +35,7 @@
 
 /* Style for the table */
 table {
-  width: 1000px;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   font-size: 16px;
@@ -58,10 +55,26 @@ table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  width: 1200px;
 }
 
 /* Hover effect on table rows */
 table tbody tr:hover {
   background-color: #1b8bff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content {
+    width: 100%;
+    margin: 0;
+  }
+  
+  table {
+    font-size: 14px;
+  }
 }
