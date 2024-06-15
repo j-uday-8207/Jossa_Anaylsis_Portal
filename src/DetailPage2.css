@@ -1,0 +1,113 @@
+.detail-page {
+    display: flex;
+    background-color: #1a1a2e;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    background-color: #2c2f36;
+    padding: 20px;
+    color: #fff;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.back-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    background-color: #2c2f36;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.variation-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.variation-button:last-child {
+    margin-right: 0;
+}
+
+.variation-button:hover {
+    background-color: #0056b3;
+}
+.classification-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .classification-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .classification-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .classification-button.active {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  .go-back-button {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff; /* Example background color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 50%; /* Makes the button circular */
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .go-back-button:hover {
+    background-color: #45a049;
+  }
+  /* Optional: Add more specific styles for different button states */
+  
