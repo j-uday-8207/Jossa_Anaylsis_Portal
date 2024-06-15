@@ -1,0 +1,48 @@
+/* src/Sidebar6.css */
+
+.sidebar {
+  background-color: #1f4068;
+  padding: 20px;
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #e94560;
+  color: #ffffff;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1em;
+  background-color: #1b8bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,39 @@
+.header {
+  background-color: #282c34;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  display:flex;
+  height: 1000px; 
+}
+
+.sidebar5 {
+  width: 300px;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+
+}
+
+.chart-inner-container {
+  width: 1200px; /* Adjust this based on the number of branches */
+  height: 600px; /* Adjust height to ensure better visibility */
+}
