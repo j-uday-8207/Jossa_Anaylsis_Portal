@@ -22,13 +22,17 @@ const cards = [
   {
     title: "What is the trend in the opening and closing ranks for popular branches?",
     description: "Discover the dynamic trends in opening and closing ranks for popular branches, uncovering the evolving competitiveness and demand for sought-after fields of study. This analysis offers valuable insights for students and educational institutions, guiding informed decisions and highlighting the changing landscape of higher education.",
+    link: "/DetailPage6"
+    
   },
   {
     title: "How has the preference for specialized branches (such as Aerospace, Biotechnology, Computer Science, etc.) evolved over time?",
+   
     description: "Embark on a journey through time to explore the evolving preference for specialized branches like Aerospace, Biotechnology, Computer Science, and more. Unveil the changing patterns of student choices, gaining valuable insights into the dynamic landscape of specialized fields of study. Witness the rise and fall of preferences and make informed decisions based on this analysis to shape your academic path.",
   },
   {
     title: "How has the trend of students opting for dual degree programs (B.Tech + M.Tech) changed over the years?",
+    
     description: "Delve into the intriguing trend of students opting for dual degree programs (B.Tech + M.Tech) and witness its evolution over the years. Uncover the shifting preferences and choices of students, gaining insights into the growing popularity and advantages of pursuing integrated undergraduate and postgraduate degrees. Analyze the changing landscape and make informed decisions about your academic path based on this dynamic trend analysis.",
   },
   {
