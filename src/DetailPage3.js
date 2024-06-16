@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Papa from 'papaparse';
 import { Line } from 'react-chartjs-2';
 
-import './DetailPage3.css';
+import './DetailPage3.css'; // Import CSS for DetailPage3
 import finalCsv from './final.csv';
 import Sidebar3 from './Sidebar3';
 
@@ -83,34 +83,37 @@ const DetailPage3 = () => {
     };
 
     return (
-        <div className="detail-page">
+        <div className="detail-page3"> {/* Updated class name */}
             <Sidebar3 setFilteredYear={setFilteredYear} />
-            <div className="content">
+            <div className="content3"> {/* Updated class name */}
                 <h1>Evolution of Cutoff Ranks for Different Categories</h1>
-                <Line 
-                    data={prepareChartData()} 
-                    options={{
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    stepSize: 5000,
+                <div className="chart-container"> {/* New wrapper for the chart */}
+                    <Line 
+                        data={prepareChartData()} 
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false, // Ensure the chart respects its container size
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 5000,
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Rank',
+                                    },
                                 },
-                                title: {
-                                    display: true,
-                                    text: 'Rank',
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Year',
+                                    },
                                 },
                             },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Year',
-                                },
-                            },
-                        },
-                        maintainAspectRatio: false,
-                    }} 
-                />
+                        }} 
+                    />
+                </div>
             </div>
         </div>
     );

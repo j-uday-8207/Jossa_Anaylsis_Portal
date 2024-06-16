@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './DetailPage.css';
+import './Sidebar.css'; // Make sure this is imported
 import Papa from 'papaparse';
 import Sidebar from './Sidebar';
 import csvFile from './final.csv'; // Ensure this path is correct
@@ -18,11 +19,9 @@ const DetailPage = () => {
         return response.text();
       })
       .then(csvData => {
-         // Log first 100 chars of CSV data
         Papa.parse(csvData, {
           header: true,
           complete: (results) => {
-            // console.log('Parsed CSV data:', results.data);
             setOriginalData(results.data);
           },
           error: (error) => {
@@ -37,60 +36,43 @@ const DetailPage = () => {
 
   useEffect(() => {
     if (choiceData) {
-      console.log('Filtering with choiceData:', choiceData);
-      
       const filtered = originalData.filter(row =>
-        (row['Institute'] === choiceData.college) &&
-        ( row['SeatType'] === choiceData.seatType) &&
-        ( row['Year'] === choiceData.year) &&
-        (row['Gender'] === choiceData.gender)
+        row['Institute'] === choiceData.college &&
+        row['SeatType'] === choiceData.seatType &&
+        row['Year'] === choiceData.year &&
+        row['Gender'] === choiceData.gender
       );
-      console.log('Filtered data:', filtered);
       setFilteredData(filtered);
     }
   }, [choiceData, originalData]);
 
   return (
-    <div>
+    <div className="detail-page">
       <header className="header">
         <h1>Josaa Analysis Portal</h1>
       </header>
-      <div className="container">
-        <Sidebar setChoiceData={setChoiceData} />
-        <div className="content">
+      <div className="content-wrapper">
+        <div className="sidebar-container">
+          <Sidebar setChoiceData={setChoiceData} />
+        </div>
+        <div className="content-container">
           <h2>Tailor according to your need</h2>
-         
-          {filteredData && (
-            <div>
-              
-              <table>
-                <thead>
-                  <tr>
-                    <th>Institute</th>
-                    <th>Academic Program Name</th>
-                    <th>Seat Type</th>
-                    <th>Gender</th>
-                    <th>Opening Rank</th>
-                    <th>Closing Rank</th>
-                    <th>Year</th>
-                    <th>Round</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredData.map((row, index) => (
-                    <tr key={index}>
-                      <td>{row.Institute}</td>
-                      <td>{row['Academic Program Name']}</td>
-                      <td>{row['SeatType']}</td>
-                      <td>{row.Gender}</td>
-                      <td>{row['Opening Rank']}</td>
-                      <td>{row['Closing Rank']}</td>
-                      <td>{row.Year}</td>
-                      <td>{row.Round}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          {filteredData && filteredData.length > 0 && (
+            <div className="cards-container">
+              {filteredData.map((row, index) => (
+                <div className="card" key={index}>
+                  <div className="card-header">{row.Institute}</div>
+                  <div className="card-body">
+                    <p><strong>Academic Program:</strong> {row['Academic Program Name']}</p>
+                    <p><strong>Seat Type:</strong> {row['SeatType']}</p>
+                    <p><strong>Gender:</strong> {row.Gender}</p>
+                    <p><strong>Opening Rank:</strong> {row['Opening Rank']}</p>
+                    <p><strong>Closing Rank:</strong> {row['Closing Rank']}</p>
+                    <p><strong>Year:</strong> {row.Year}</p>
+                    <p><strong>Round:</strong> {row.Round}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>

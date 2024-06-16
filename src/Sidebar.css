@@ -1,67 +1,75 @@
-/* src/Sidebar.css */
+/* Sidebar.css */
+
 .sidebar {
-    background-color: #1f4068;
-    padding: 20px;
-    width: 250px;
-    margin-right: 20px;
-    border-radius: 10px;
-  }
-  
-  .sidebar h3 {
-    color: #ffffff;
-    margin-top: 0;
-  }
-  
-  .sidebar label {
-    display: block;
-    margin: 10px 0 5px;
-  }
-  
-  .sidebar select {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #e94560;
-    color: #ffffff;
-  }
-  
-  .sidebar button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .sidebar .back-button {
-    background-color: #162447;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar .apply-button {
-    background-color: #1b8bff;
-    color: #ffffff;
-  }
-  
-  .sidebar .clear-button {
-    background-color: #e94560;
-    color: #ffffff;
-  }
-  
-  .sidebar .show-table-button {
-    background-color: #0f3460;
-    color: #ffffff;
-  }
-  
-  .sidebar button:hover {
-    opacity: 0.9;
-  }
-  
+  background-color: #1f4068;
+  padding: 20px;
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 10px;
+  /* Updated styles from homepage */
+  background-color: #1f4068;
+  color: #ffffff;
+}
+
+.sidebar h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.sidebar label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.sidebar select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #e94560;
+  color: #ffffff;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Added transition for smooth animation */
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar .back-button {
+  background-color: #162447;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.sidebar .apply-button {
+  background-color: #1b8bff;
+  color: #ffffff;
+}
+
+.sidebar .clear-button {
+  background-color: #e94560;
+  color: #ffffff;
+}
+
+.sidebar .show-table-button {
+  background-color: #0f3460;
+  color: #ffffff;
+}
+
+.sidebar button:hover {
+  opacity: 0.9;
+}
+
+/* Added styles for hover effect on apply button */
+.sidebar .apply-button:hover {
+  transform: scale(1.1); /* Scale the button by 10% on hover */
+}

@@ -3,40 +3,98 @@
     padding: 20px;
     width: 200px;
     color: white;
-}
-
-h3 {
+    border-radius: 8px;
+  }
+  
+  .sidebar2 h3 {
     margin-bottom: 20px;
-}
-
-.years {
+    color: #fff;
+  }
+  
+  .sidebar2 .years {
     margin-bottom: 20px;
-}
-
-.years div {
+  }
+  
+  .sidebar2 .years div {
     margin-bottom: 10px;
-}
-
-.apply-button, .clear-button, .show-table {
+    display: flex;
+    align-items: center; /* Align checkboxes with text */
+  }
+  
+  .sidebar2 .years input[type="checkbox"] {
+    display: none; /* Hide the actual checkbox */
+  }
+  
+  .sidebar2 .years input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1em;
+    color: #ffffff;
+  }
+  
+  .sidebar2 .years input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .sidebar2 .years input[type="checkbox"]:checked + label::before {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  .sidebar2 .years input[type="checkbox"] + label::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    width: 8px;
+    height: 16px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .sidebar2 .years input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+  }
+  
+  .sidebar2 .apply-button,
+  .sidebar2 .clear-button {
     display: block;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     cursor: pointer;
-}
-
-.apply-button {
     background-color: #007bff;
     color: white;
-}
-
-.clear-button {
+    border-radius: 4px;
+  }
+  
+  .sidebar2 .apply-button:hover,
+  .sidebar2 .clear-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .sidebar2 .clear-button {
     background-color: #dc3545;
-    color: white;
-}
-
-.show-table {
-    background-color: #007bff;
-    color: white;
-}
+  }
+  
+  .sidebar2 .apply-button:focus,
+  .sidebar2 .clear-button:focus {
+    outline: none;
+  }
+  
+  

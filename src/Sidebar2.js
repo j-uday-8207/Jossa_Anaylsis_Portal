@@ -14,7 +14,7 @@ const Sidebar2 = ({ handleYearChange }) => {
   };
 
   return (
-    <div className="sidebar">
+    <div className="sidebar2">
       <h3>Filters</h3>
       <div className="years">
         {[2022, 2021, 2020, 2019, 2018, 2017, 2016].map(year => (
@@ -29,6 +29,8 @@ const Sidebar2 = ({ handleYearChange }) => {
           </div>
         ))}
       </div>
+      <button className="apply-button" onClick={() => handleYearChange(selectedYears)}>Apply</button>
+      <button className="clear-button" onClick={() => setSelectedYears([])}>Clear</button>
     </div>
   );
 };

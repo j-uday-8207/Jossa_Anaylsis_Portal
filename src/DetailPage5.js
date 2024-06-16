@@ -104,6 +104,9 @@ const DetailPage5 = () => {
         title: {
           display: true,
           text: 'Average Rank'
+        },
+        ticks: {
+          beginAtZero: true, // Ensure the y-axis starts from zero
         }
       }
     }

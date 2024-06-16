@@ -1,72 +1,189 @@
 /* DetailPage.css */
 
-/* Style for the header */
-.header {
-  text-align: center;
-  padding: 20px;
-  background-color: #003366;
-  color: white;
+/* Include Raleway font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body, html {
+    font-family: 'Raleway', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-/* Style for the problem statement */
-.problem-statement {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.2em;
-  color: #333;
-  width: 500px;
+.detail-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Style for the container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align items to the top */
-  flex-direction: row; /* Keep the flex direction as row */
-  margin-top: 20px;
+.detail-page .header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a; /* Darker background for header */
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
-/* Style for the content area */
-.content {
-  width: 1000px;
-  max-width: 1200px; /* Adjust max-width as needed */
-  margin-top: 20px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow-x: auto; /* Enable horizontal scrollbar */
-  overflow-y: auto; /* Enable vertical scrollbar */
-  max-height: calc(100vh - 200px); /* Adjust max-height as needed */
+.detail-page .content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
 }
 
-/* Style for the table */
-table {
-  width: 1000px; /* Adjust width to fit content */
-  border-collapse: collapse;
-  margin-top: 20px;
-  font-size: 16px;
-  table-layout: auto; /* Allow table to adjust width based on content */
-  
+.detail-page .sidebar-container {
+    flex: 0 0 250px;
+    background-color: #2c2c2c; /* Darker background for sidebar */
+    padding: 20px;
+    color: #fff;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    margin-right: 20px;
+    border-radius: 10px;
 }
 
-/* Style for table header */
-table th {
-  background-color:#e94560;
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
- 
+.detail-page .content-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #1e1e1e; /* Darker background for content */
+    color: #fff;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for table rows */
-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  width: 1200px;
+.detail-page h2 {
+    color: #2ecc71; /* Green */
+    margin-bottom: 20px;
 }
 
-/* Hover effect on table rows */
-table tbody tr:hover {
-  background-color: #1b8bff;
+.detail-page .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.detail-page .card {
+    background-color: #2c3e50; /* Darker blue-gray */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    flex: 1 1 calc(33% - 40px); /* Adjust this to control card width */
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    color: #fff;
+}
+
+.detail-page .card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-page .card-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff5722; /* Red */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.detail-page .card-body p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.detail-page .card-body strong {
+    color: #2ecc71; /* Green */
+}
+
+.detail-page .back-button {
+    background-color: #2ecc71; /* Green */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.detail-page .back-button:hover {
+    background-color: #27ae60; /* Darker Green */
+}
+
+.detail-page .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.detail-page .variation-button {
+    background-color: #3498db; /* Blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.detail-page .variation-button:last-child {
+    margin-right: 0;
+}
+
+.detail-page .variation-button:hover {
+    background-color: #2980b9; /* Darker Blue */
+}
+
+.detail-page .classification-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.detail-page .classification-button {
+    padding: 8px 16px;
+    background-color: #ff5722; /* Red */
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.detail-page .classification-button:hover {
+    background-color: #d84315; /* Darker Red */
+}
+
+.detail-page .classification-button.active {
+    background-color: #d84315; /* Darker Red */
+    border-color: #d84315; /* Darker Red */
+}
+
+.detail-page .go-back-button {
+    width: 40px;
+    height: 40px;
+    background-color: #2ecc71; /* Green */
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.detail-page .go-back-button:hover {
+    background-color: #27ae60; /* Darker Green */
 }
