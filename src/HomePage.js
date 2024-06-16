@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 
@@ -38,38 +38,45 @@ const cards = [
     description: "Wanna discover how the interests of students in different branches have evolved over the years? Click here and explore away.",
     link: "/BranchesVar"
   },
-
-
 ];
 
 const Card = ({ title, description, link }) => (
-  <div className="card">
+  <div className="homepage-card">
     <h3>{title}</h3>
     <p>{description}</p>
     {link ? (
       <Link to={link}>
-        <button className="card-button"><span>Click to know more →</span></button>
+        <button className="homepage-card-button"><span>Click to know more →</span></button>
       </Link>
     ) : (
-      <button className="card-button"><span>Click to know more →</span></button>
+      <button className="homepage-card-button"><span>Click to know more →</span></button>
     )}
   </div>
 );
 
 const AboutUsModal = ({ onClose }) => (
-  <div className="modal">
-    <div className="modal-content">
-      <span className="close" onClick={onClose}>&times;</span>
+  <div className="homepage-modal">
+    <div className="homepage-modal-content">
+      <span className="homepage-close" onClick={onClose}>&times;</span>
       <h2>About Us</h2>
+      <div className="homepage-profile">
+        <div className="homepage-profile-item">
+          <img src="/uday.jpg" alt="Uday Jain" className="homepage-profile-image" />
+          <p>Uday Jain</p>
+        </div>
+        <div className="homepage-profile-item">
+          <img src="/shrutee.jpg" alt="Shrutee Prakash Dalai" className="homepage-profile-image" />
+          <p>Shrutee Prakash Dalai</p>
+        </div>
+      </div>
       <p>This portal is developed by Uday Jain and Shrutee Prakash Dalai</p>
       <p>Contact us at: j.uday@iitg.ac.in / d.shrutee@iitg.ac.in</p>
-      
     </div>
   </div>
 );
 
 const HomePage = () => {
-  const [showAboutUs, setShowAboutUs] = useState(false);
+  const [showAboutUs, setShowAboutUs] = React.useState(false);
 
   const toggleAboutUs = () => {
     setShowAboutUs(!showAboutUs);
@@ -77,12 +84,12 @@ const HomePage = () => {
 
   return (
     <div>
-      <header className="header">
+      <header className="homepage-header">
         <h1>Josaa Analysis Portal</h1>
-        <button className="about-button" onClick={toggleAboutUs}>About Us</button>
+        <button className="homepage-about-button" onClick={toggleAboutUs}>About Us</button>
       </header>
-      <div className="container">
-        <div className="card-container">
+      <div className="homepage-container">
+        <div className="homepage-card-container">
           {cards.map((card, index) => (
             <Card key={index} title={card.title} description={card.description} link={card.link} />
           ))}

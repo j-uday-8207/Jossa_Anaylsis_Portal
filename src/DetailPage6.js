@@ -66,10 +66,8 @@ const DetailPage6 = () => {
         <Sidebar6 setChoiceData={setChoiceData} />
         <div className="content">
           <h2>College Predictions Based on Criteria</h2>
-          
           {filteredData.length > 0 ? (
-            <div>
-             
+            <div className="table-container">
               <table>
                 <thead>
                   <tr>

@@ -29,11 +29,12 @@
   width: 100%;
   height: 100%;
   display: flex;
-  
+  overflow-x: auto;
 
 }
 
 .chart-inner-container {
-  width: 1200px; /* Adjust this based on the number of branches */
+  width: 800px; /* Adjust this based on the number of branches */
   height: 600px; /* Adjust height to ensure better visibility */
+  overflow-x: auto;
 }

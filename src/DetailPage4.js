@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Papa from 'papaparse';
 import { Line } from 'react-chartjs-2';
-import { Chart, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
+import { Chart, LineElement, PointElement, LinearScale, Title, CategoryScale, Legend } from 'chart.js';
 import Sidebar4 from './Sidebar4';
 import './DetailPage4.css';
 import finalCsv from './final.csv';
-Chart.register(LineElement, PointElement, LinearScale, Title, CategoryScale);
+
+Chart.register(LineElement, PointElement, LinearScale, Title, CategoryScale, Legend);
 
 const DetailPage4 = () => {
     const [data, setData] = useState({});
@@ -69,8 +70,13 @@ const DetailPage4 = () => {
         years.sort();
         const filteredYears = years.filter(year => year >= filteredYear[0] && year <= filteredYear[1]);
 
+        const truncateLabel = (label, maxLength) => {
+            if (label.length <= maxLength) return label;
+            return label.substring(0, maxLength) + '...';
+        };
+
         const datasets = (selectedPrograms.length > 0 ? selectedPrograms : Object.keys(data)).map(program => ({
-            label: program,
+            label: truncateLabel(program, 20), // Truncate legend name to 20 characters
             data: filteredYears.map(year => data[program]?.[year] || 0),
             fill: false,
             borderColor: getRandomColor(),
@@ -91,36 +97,68 @@ const DetailPage4 = () => {
         return color;
     };
 
+    const filteredLegendItems = () => {
+        const programsToShow = selectedPrograms.length > 0 ? selectedPrograms : Object.keys(data);
+        return programsToShow.map(program => ({
+            label: program,
+            color: getRandomColor(),
+        }));
+    };
+
     return (
-        <div className="detail-page">
+        <div className="detail-page4">
             <Sidebar4 setFilteredYear={setFilteredYear} setSelectedPrograms={setSelectedPrograms} data={data} />
             <div className="content">
                 <h1>Trend of Students Opting for Dual Degree Programs</h1>
-                <div className="canvas-container">
-                    <Line 
-                        data={prepareChartData()} 
-                        options={{
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        stepSize: 1000,
+                <div className="chart-container">
+                    <div className="canvas-container">
+                        <Line 
+                            data={prepareChartData()} 
+                            options={{
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            stepSize: 1000,
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Number of Students',
+                                        },
                                     },
-                                    title: {
-                                        display: true,
-                                        text: 'Number of Students',
+                                    x: {
+                                        title: {
+                                            display: true,
+                                            text: 'Year',
+                                        },
                                     },
                                 },
-                                x: {
-                                    title: {
-                                        display: true,
-                                        text: 'Year',
-                                    },
-                                },
-                            },
-                            maintainAspectRatio: false,
-                        }} 
-                    />
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: selectedPrograms.length !== 1,
+                                        labels: {
+                                            boxWidth: 10,
+                                            boxHeight: 10,
+                                            font: {
+                                                size: 10,
+                                            },
+                                        },
+                                    }
+                                }
+                            }} 
+                        />
+                    </div>
+                    {selectedPrograms.length > 1 && (
+                        <div className="legend-container">
+                            {filteredLegendItems().map(dataset => (
+                                <div key={dataset.label} className="legend-item" title={dataset.label}>
+                                    <span className="legend-color-box" style={{ backgroundColor: dataset.color }}></span>
+                                    {dataset.label}
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
