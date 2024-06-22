@@ -31,10 +31,10 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 ### <pre> Average Rank for Branches in IITs: </pre>
 ![Average_Rank](./public/Snapshots/Average_Rank.png)
 ### <pre> Cutoff Ranks for Various Reserved Categories: </pre>
-![Cutoff](./public/Snapshots/Cutoff_Categories.png)
+![Cutoff](./public/Snapshots/Cutoff_Category.png)
 ### <pre> Trends of Old V/s New IITs : </pre>
-![Old vs New](./public/Snapshots/Ols_vs_New.png)
+![Old vs New](./public/Snapshots/Old_vs_New.png)
 ### <pre> Trends Between Poplular Branches: </pre>
-![Popular Branches](./public/Snapshots/Popular_Branches.png)
+![Popular Branches](./public/Snapshots/Popular_Branch.png)
 ### <pre> About Us : </pre>
 ![About Us](./public/Snapshots/About_Us.png)
