@@ -21,7 +21,7 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 
 # <pre>Visual Insights of the Portal : </pre>
 ### <pre>  Homepage : </pre>
-![Homepage](./Snapshots/Homepage.png)
+![Homepage](/Snapshots/Homepage.png)
 ### <pre> Tailor According to Your Need : </pre>
 ![Tailor_Page](./Snapshots/Tailor_Need.png)
 ### <pre> According to Your Rank : </pre>
