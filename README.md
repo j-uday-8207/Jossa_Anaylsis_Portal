@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# <pre>            Josaa_Anaylsis_Portal</pre>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## <pre>Project Overview:  </pre>
+Harnessing data from the Joint Seat Allocation Authority (JOSAA), this project employs diverse graphical representations to unveil insights. Featuring a dynamic data table equipped with pagination, search, and custom filters, it empowers users to explore and analyze JOSAA data comprehensively and intuitively. This interactive approach fosters a deeper understanding of trends and patterns within the dataset, enhancing decision-making processes in educational and career pathways.
 
-### `npm start`
+### <pre>`Technologies Used:`</pre>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Frontend: React<br>
+Backend: Node.js<br>
+Visualization: Charts.js<br>
+Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### <pre>`Installation Steps: `</pre>
 
-### `npm test`
+#### <pre>'Step 1': Clone or Download the repository .</pre>
+#### <pre>'Step 2': Install all the Dependencies while using npm.</pre>
+#### <pre>'Step 3': Excecute the command 'node server.js'.</pre>
+#### <pre>'Step 4': Excecute the command 'npm start' .</pre>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# <pre>Visual Insights of the Portal : </pre>
+### <pre>  Homepage : </pre>
+![Homepage](./Snapshots/Homepage.png)
+### <pre> Tailor According to Your Need : </pre>
+![Tailor_Page](./Snapshots/Tailor_Need.png)
+### <pre> According to Your Rank : </pre>
+![Rank_Predictor](./Snapshots/Rank_Predct.png)
+### <pre> Trends of Dual Degree Programs : </pre>
+![Dual_Degree](./Snapshots/Dual_Degree.png)
+### <pre> Average Rank for Branches in IITs: </pre>
+![Average_Rank](./Snapshots/Average_Rank.png)
+### <pre> Cutoff Ranks for Various Reserved Categories: </pre>
+![Cutoff](./Snapshots/Cutoff_Categories.png)
+### <pre> Trends of Old V/s New IITs : </pre>
+![Old vs New](./Snapshots/Ols_vs_New.png)
+### <pre> Trends Between Poplular Branches: </pre>
+![Popular Branches](./Snapshots/Popular_Branches.png)
+### <pre> About Us : </pre>
+![About Us](./Snapshots/About_Us.png)
