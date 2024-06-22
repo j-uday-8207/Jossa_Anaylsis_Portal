@@ -21,20 +21,20 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 
 # <pre>Visual Insights of the Portal : </pre>
 ### <pre>  Homepage : </pre>
-![Homepage](/Snapshots/Homepage.png)
+![Homepage](./public/Snapshots/Homepage.png)
 ### <pre> Tailor According to Your Need : </pre>
-![Tailor_Page](./Snapshots/Tailor_Need.png)
+![Tailor_Page](./public/Snapshots/Tailor_Need.png)
 ### <pre> According to Your Rank : </pre>
-![Rank_Predictor](./Snapshots/Rank_Predct.png)
+![Rank_Predictor](./public/Snapshots/Rank_Predct.png)
 ### <pre> Trends of Dual Degree Programs : </pre>
-![Dual_Degree](./Snapshots/Dual_Degree.png)
+![Dual_Degree](./public/Snapshots/Dual_Degree.png)
 ### <pre> Average Rank for Branches in IITs: </pre>
-![Average_Rank](./Snapshots/Average_Rank.png)
+![Average_Rank](./public/Snapshots/Average_Rank.png)
 ### <pre> Cutoff Ranks for Various Reserved Categories: </pre>
-![Cutoff](./Snapshots/Cutoff_Categories.png)
+![Cutoff](./public/Snapshots/Cutoff_Categories.png)
 ### <pre> Trends of Old V/s New IITs : </pre>
-![Old vs New](./Snapshots/Ols_vs_New.png)
+![Old vs New](./public/Snapshots/Ols_vs_New.png)
 ### <pre> Trends Between Poplular Branches: </pre>
-![Popular Branches](./Snapshots/Popular_Branches.png)
+![Popular Branches](./public/Snapshots/Popular_Branches.png)
 ### <pre> About Us : </pre>
-![About Us](./Snapshots/About_Us.png)
+![About Us](./public/Snapshots/About_Us.png)
