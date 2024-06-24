@@ -14,6 +14,7 @@ body, html {
     background-color: #ff5722;
     padding: 20px;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -24,6 +25,7 @@ body, html {
 .homepage-header h1 {
     margin: 0;
     font-size: 2.5em;
+    font-family: 'Raleway', sans-serif;
     color: #ffffff;
 }
 
@@ -31,6 +33,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Raleway', sans-serif;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -42,6 +45,7 @@ body, html {
     margin: 20px 0;
     width: calc(100% - 40px); /* Full width with padding adjustment */
     max-width: 1200px;
+    font-family: 'Raleway', sans-serif;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -50,15 +54,18 @@ body, html {
 
 .homepage-card:hover {
     transform: scale(1.05);
+    
 }
 
 .homepage-card h3 {
     color: #ffd54f;
     margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .homepage-card p {
     color: #eeeeee;
+    font-family: 'Raleway', sans-serif;
 }
 
 .homepage-card-button {
@@ -66,6 +73,7 @@ body, html {
     color: #ffffff;
     padding: 10px 20px;
     border: none;
+    font-family: 'Raleway', sans-serif;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -75,6 +83,7 @@ body, html {
 
 .homepage-card-button:hover {
     background-color: #0288d1;
+    font-family: 'Raleway', sans-serif;
     transform: scale(1.1);
 }
 
@@ -83,6 +92,7 @@ body, html {
     color: #000000;
     padding: 15px 30px;
     border: none;
+    font-family: 'Raleway', sans-serif;
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -93,6 +103,7 @@ body, html {
 
 .homepage-about-button:hover {
     background-color: #fbc02d;
+    font-family: 'Raleway', sans-serif;
 }
 
 .homepage-modal {
@@ -102,6 +113,7 @@ body, html {
     left: 0;
     top: 0;
     width: 100%;
+    font-family: 'Raleway', sans-serif;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
@@ -113,6 +125,7 @@ body, html {
     padding: 20px;
     border: 2px solid #ffffff;
     width: 60%;
+    font-family: 'Raleway', sans-serif;
     max-width: 600px;
     border-radius: 20px;
     color: #ffffff;
@@ -122,6 +135,7 @@ body, html {
 .homepage-close {
     color: #ffffff;
     font-size: 28px;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     position: absolute;
     top: 10px;
@@ -135,6 +149,7 @@ body, html {
 }.homepage-profile-item {
   text-align: center;
   margin: 0 20px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .homepage-profile-image {
@@ -143,11 +158,14 @@ body, html {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
+  
+  font-family: 'Raleway', sans-serif;
   border: 2px solid #007bff;
 }
 
 .homepage-profile p {
   color: #333;
   font-size: 18px;
+  font-family: 'Raleway', sans-serif;
   margin: 10px 0;
 }
