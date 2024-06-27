@@ -20,6 +20,8 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 #### <pre>'Step 4': Excecute the command 'npm start' .</pre>
 
 # <pre>Visual Insights of the Portal : </pre>
+### <pre> Video Insight : </pre>
+![video] (./public/Snapshots/Video.mp4)
 ### <pre>  Homepage : </pre>
 ![Homepage](./public/Snapshots/Homepage.png)
 ### <pre> Tailor According to Your Need : </pre>
