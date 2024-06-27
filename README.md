@@ -21,7 +21,7 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 
 # <pre>Visual Insights of the Portal : </pre>
 ### <pre> Video Insight : </pre>
-[video](https://drive.google.com/file/d/1hUOdxvlsnD_slztccv93Zj3w9jtyy0IP/view?usp=sharing)
+[video](./public/Snapshots/Video.mp4)
 ### <pre>  Homepage : </pre>
 ![Homepage](./public/Snapshots/Homepage.png)
 ### <pre> Tailor According to Your Need : </pre>
