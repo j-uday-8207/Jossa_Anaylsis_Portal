@@ -20,6 +20,8 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 #### <pre>'Step 4': Excecute the command 'npm start' .</pre>
 
 # <pre>Visual Insights of the Portal : </pre>
+
+
 ### <pre>  Homepage : </pre>
 ![Homepage](./public/Snapshots/Homepage.png)
 ### <pre> Tailor According to Your Need : </pre>
@@ -31,10 +33,10 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 ### <pre> Average Rank for Branches in IITs: </pre>
 ![Average_Rank](./public/Snapshots/Average_Rank.png)
 ### <pre> Cutoff Ranks for Various Reserved Categories: </pre>
-![Cutoff](./public/Snapshots/Cutoff_Category.png)
+![Cutoff](./public/Snapshots/Cutoff_Categories.png)
 ### <pre> Trends of Old V/s New IITs : </pre>
-![Old vs New](./public/Snapshots/Old_vs_New.png)
+![Old vs New](./public/Snapshots/Ols_vs_New.png)
 ### <pre> Trends Between Poplular Branches: </pre>
-![Popular Branches](./public/Snapshots/Popular_Branch.png)
+![Popular Branches](./public/Snapshots/Popular_Branches.png)
 ### <pre> About Us : </pre>
 ![About Us](./public/Snapshots/About_Us.png)

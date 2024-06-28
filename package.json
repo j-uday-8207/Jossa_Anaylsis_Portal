@@ -1,47 +1,149 @@
 {
+  
   "name": "my-app",
+  
   "version": "0.1.0",
+  
   "private": true,
+  
+  "homepage": "https://j-uday-8207.github.io/Jossa_Anaylsis_Portal",
+  
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.2",
-    "body-parser": "^1.20.2",
-    "chart.js": "^4.4.3",
-    "cors": "^2.8.5",
-    "csvtojson": "^2.0.10",
-    "express": "^4.19.2",
-    "papaparse": "^5.4.1",
-    "react": "^18.3.1",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+  
+    
+  "@testing-library/jest-dom": "^5.17.0",
+  
+    
+  "@testing-library/react": "^13.4.0",
+  
+    
+  "@testing-library/user-event": "^13.5.0",
+  
+    
+  "axios": "^1.7.2",
+  
+    
+  "body-parser": "^1.20.2",
+  
+    
+  "chart.js": "^4.4.3",
+  
+    
+  "cors": "^2.8.5",
+  
+    
+  "csvtojson": "^2.0.10",
+  
+    
+  "express": "^4.19.2",
+  
+    
+  "papaparse": "^5.4.1",
+  
+    
+  "react": "^18.3.1",
+  
+    
+  "react-chartjs-2": "^5.2.0",
+  
+    
+  "react-dom": "^18.3.1",
+  
+    
+  "react-router-dom": "^6.23.1",
+  
+    
+  "react-scripts": "5.0.1",
+  
+    
+  "web-vitals": "^2.1.4"
+  
   },
+  
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  
+    
+  "start": "react-scripts start",
+  
+    
+  "build": "react-scripts build",
+  
+    
+  "test": "react-scripts test",
+  
+    
+  "eject": "react-scripts eject",
+  
+    
+  "predeploy": "npm run build",
+  
+    
+  "deploy": "gh-pages -d build"
+  
   },
+  
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  
+    
+  "extends": [
+  
+    
+    
+  "react-app",
+  
+    
+    
+  "react-app/jest"
+  
+    
+  ]
+  
   },
+  
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  
+    
+  "production": [
+  
+    
+    
+  ">0.2%",
+  
+    
+    
+  "not dead",
+  
+    
+    
+  "not op_mini all"
+  
+    
+  ],
+  
+    
+  "development": [
+  
+    
+    
+  "last 1 chrome version",
+  
+    
+    
+  "last 1 firefox version",
+  
+    
+    
+  "last 1 safari version"
+  
+    
+  ]
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "gh-pages": "^6.1.1"
+  
   }
 }

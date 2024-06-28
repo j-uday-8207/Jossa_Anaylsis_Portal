@@ -9,7 +9,7 @@ const port = 3000;
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://localhost:3001' // Allow requests from this origin
+  origin: 'https://j-uday-8207.github.io' // Allow requests from this origin
 }));
 
 // Dummy data (replace with your actual data source)
