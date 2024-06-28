@@ -19,7 +19,7 @@
     const [error, setError] = useState('');
 
     useEffect(() => {
-      axios.get('https://jossa-anaylsis-portal.onrender.com/api/choices')
+      axios.get('http://localhost:3000/api/choices')
         .then(response => {
           const data = response.data;
           setFilters({
@@ -44,7 +44,7 @@
         gender
       };
     
-      axios.post('https://jossa-anaylsis-portal.onrender.com/api/data', filters)
+      axios.post('http://localhost:3000/api/data', filters)
         .then(response => {
           setResponseMessage('Filters applied successfully.');
           setChoiceData(response.data); // Pass filtered data to DetailPage
