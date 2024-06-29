@@ -36,7 +36,7 @@ Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
 ![Cutoff](./public/Snapshots/Cutoff_Category.png)
 ### <pre> Trends of Old V/s New IITs : </pre>
 ![Old vs New](./public/Snapshots/Old_vs_New.png)
-### <pre> Trends Between Popular Branch: </pre>
-![Popular Branch](./public/Snapshots/Popular_Branch.png)
+### <pre> Trends Between Poplular Branches: </pre>
+![Popular Branches](./public/Snapshots/Popular_Branch.png)
 ### <pre> About Us : </pre>
 ![About Us](./public/Snapshots/About_Us.png)
