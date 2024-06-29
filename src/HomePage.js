@@ -69,7 +69,7 @@ const AboutUsModal = ({ onClose }) => (
           <p>Shrutee Prakash Dalai</p>
         </div>
   <div className="homepage-profile-item">
-          <img src="/saumya.jpg" alt="Saumya Tripathi" className="homepage-profile-image" />
+          <img src="/Saumya.jpg" alt="Saumya Tripathi" className="homepage-profile-image" />
           <p>Saumya Tripathi</p>
         </div>
       </div>
