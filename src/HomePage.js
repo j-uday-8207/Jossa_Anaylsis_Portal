@@ -68,9 +68,13 @@ const AboutUsModal = ({ onClose }) => (
           <img src="/shrutee.jpg" alt="Shrutee Prakash Dalai" className="homepage-profile-image" />
           <p>Shrutee Prakash Dalai</p>
         </div>
+  <div className="homepage-profile-item">
+          <img src="/Saumya.jpg" alt="Saumya Tripathi" className="homepage-profile-image" />
+          <p>Saumya Tripathi</p>
+        </div>
       </div>
-      <p>This portal is developed by Uday Jain and Shrutee Prakash Dalai</p>
-      <p>Contact us at: j.uday@iitg.ac.in / d.shrutee@iitg.ac.in</p>
+      <p>This portal is developed by Uday Jain, Shrutee Prakash Dalai and Saumya Tripathi</p>
+      <p>Contact us at: j.uday@iitg.ac.in / d.shrutee@iitg.ac.in / t.saumya@iitg.ac.in</p>
     </div>
   </div>
 );
