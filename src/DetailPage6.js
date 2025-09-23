@@ -19,7 +19,7 @@ const DetailPage6 = () => {
   const [originalData, setOriginalData] = useState([]);
 
   useEffect(() => {
-    fetch(csvFile)
+    fetch("/final.csv")
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

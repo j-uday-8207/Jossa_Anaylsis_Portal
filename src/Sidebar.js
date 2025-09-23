@@ -1,7 +1,7 @@
   import React, { useState, useEffect } from 'react';
   import './Sidebar.css';
   import { Link } from 'react-router-dom';
-  import axios from 'axios';
+  import Papa from 'papaparse';
 
   const Sidebar = ({ setChoiceData }) => {
     const [filters, setFilters] = useState({
@@ -19,42 +19,58 @@
     const [error, setError] = useState('');
 
     useEffect(() => {
-      axios.get('http://localhost:3000/api/choices')
+      // Fetch and parse CSV to extract unique filter values
+      console.log('Sidebar: Fetching CSV for filter options...');
+      fetch('/final.csv')
         .then(response => {
-          const data = response.data;
-          setFilters({
-            college: data.Institute, // Mapping Institute to college
-            seatType: data.SeatType,
-            year: data.Year,
-            gender: data.Gender
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(csvData => {
+          Papa.parse(csvData, {
+            header: true,
+            complete: (results) => {
+              console.log('Sidebar: CSV parsed for filters, rows:', results.data.length);
+              
+              // Extract unique values for each filter
+              const uniqueValues = {
+                college: [...new Set(results.data.map(row => row.Institute).filter(Boolean))],
+                seatType: [...new Set(results.data.map(row => row.SeatType).filter(Boolean))],
+                year: [...new Set(results.data.map(row => row.Year).filter(Boolean))],
+                gender: [...new Set(results.data.map(row => row.Gender).filter(Boolean))]
+              };
+              
+              console.log('Sidebar: Unique filter values:', uniqueValues);
+              setFilters(uniqueValues);
+            },
+            error: (error) => {
+              console.error('Error parsing CSV file:', error);
+              setError('Error loading filter options');
+            }
           });
         })
         .catch(error => {
-          console.error('Error fetching filter choices:', error);
+          console.error('Error fetching CSV file:', error);
+          setError('Error fetching filter options');
         });
     }, []);
 
     const handleApplyFilter = (e) => {
       e.preventDefault();
       
-      const filters = {
+      const filterData = {
         college,
         seatType,
         year,
         gender
       };
     
-      axios.post('http://localhost:3000/api/data', filters)
-        .then(response => {
-          setResponseMessage('Filters applied successfully.');
-          setChoiceData(response.data); // Pass filtered data to DetailPage
-          setError('');
-        })
-        .catch(error => {
-          console.error('There was an error:', error);
-          setError('Error occurred. Please try again.');
-          setResponseMessage('');
-        });
+      console.log('Sidebar: Applying filters:', filterData);
+      setResponseMessage('Filters applied successfully.');
+      setChoiceData(filterData); // Pass filtered data to DetailPage
+      setError('');
     };
 
     const handleClearSelections = () => {

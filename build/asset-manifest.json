@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Jossa_Anaylsis_Portal/static/css/main.88478fb9.css",
-    "main.js": "/Jossa_Anaylsis_Portal/static/js/main.d76f0ded.js",
-    "static/js/453.ed3810f9.chunk.js": "/Jossa_Anaylsis_Portal/static/js/453.ed3810f9.chunk.js",
-    "static/media/final.csv": "/Jossa_Anaylsis_Portal/static/media/final.bc78095cd7097260a746.csv",
-    "index.html": "/Jossa_Anaylsis_Portal/index.html",
-    "main.88478fb9.css.map": "/Jossa_Anaylsis_Portal/static/css/main.88478fb9.css.map",
-    "main.d76f0ded.js.map": "/Jossa_Anaylsis_Portal/static/js/main.d76f0ded.js.map",
-    "453.ed3810f9.chunk.js.map": "/Jossa_Anaylsis_Portal/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/static/css/main.10a17e92.css",
+    "main.js": "/static/js/main.8c3e538d.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/final.csv": "/static/media/final.e9e88ad0b5ccd30ed6db.csv",
+    "index.html": "/index.html",
+    "main.10a17e92.css.map": "/static/css/main.10a17e92.css.map",
+    "main.8c3e538d.js.map": "/static/js/main.8c3e538d.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.88478fb9.css",
-    "static/js/main.d76f0ded.js"
+    "static/css/main.10a17e92.css",
+    "static/js/main.8c3e538d.js"
   ]
 }

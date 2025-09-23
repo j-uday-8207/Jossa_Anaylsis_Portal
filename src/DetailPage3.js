@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import { Line } from 'react-chartjs-2';
 
 import './DetailPage3.css'; // Import CSS for DetailPage3
-import finalCsv from './final.csv';
+// CSV file will be fetched from public folder
 import Sidebar3 from './Sidebar3';
 
 const DetailPage3 = () => {
@@ -11,13 +11,19 @@ const DetailPage3 = () => {
     const [filteredYear, setFilteredYear] = useState([2016, 2022]);
 
     const fetchData = useCallback(() => {
-        Papa.parse(finalCsv, {
-            download: true,
-            header: true,
-            complete: (results) => {
-                processCSVData(results.data);
-            },
-        });
+        fetch('/final.csv')
+            .then(response => response.text())
+            .then(csvData => {
+                Papa.parse(csvData, {
+                    header: true,
+                    complete: (results) => {
+                        processCSVData(results.data);
+                    },
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching CSV file:', error);
+            });
     }, []);
 
     useEffect(() => {

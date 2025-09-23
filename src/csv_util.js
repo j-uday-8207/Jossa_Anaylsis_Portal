@@ -1,7 +1,7 @@
 import Papa from 'papaparse';
 
-export const parseCSV = (filePath, callback) => {
-  fetch(filePath)
+export const parseCSV = (callback) => {
+  fetch('/final.csv')
     .then(response => response.text())
     .then(data => {
       Papa.parse(data, {
@@ -13,5 +13,8 @@ export const parseCSV = (filePath, callback) => {
           console.error('Error parsing CSV file:', error);
         }
       });
+    })
+    .catch(error => {
+      console.error('Error fetching CSV file:', error);
     });
 };

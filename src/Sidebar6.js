@@ -21,7 +21,7 @@ const Sidebar6 = ({ setChoiceData }) => {
   const [rounds, setRounds] = useState([]);
 
   useEffect(() => {
-    fetch(csvFile)
+    fetch("/final.csv")
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

@@ -2,6 +2,7 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
+const path = require('path');
 const app = express();
 app.use(express.json());
 const port = 3000;
@@ -9,7 +10,9 @@ const port = 3000;
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://localhost:3001' // Allow requests from this origin
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-vercel-domain.vercel.app'] 
+    : 'http://localhost:3001'
 }));
 
 // Dummy data (replace with your actual data source)
@@ -22,7 +25,7 @@ app.use(cors());
 
 
 app.get('/api/choices', (req, res) => {
-  res.sendFile('src/output.json', { root: __dirname });
+  res.sendFile('public/output.json', { root: __dirname });
 });
 
 
@@ -35,6 +38,15 @@ app.post('/api/data', (req, res) => {
   // Simply return the received data back to the frontend
   return res.json(data);
 });
+
+// Serve static files from the React build
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

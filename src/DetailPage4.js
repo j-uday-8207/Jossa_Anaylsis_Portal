@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart, LineElement, PointElement, LinearScale, Title, CategoryScale, Legend } from 'chart.js';
 import Sidebar4 from './Sidebar4';
 import './DetailPage4.css';
-import finalCsv from './final.csv';
+// CSV file will be fetched from public folder
 
 Chart.register(LineElement, PointElement, LinearScale, Title, CategoryScale, Legend);
 
@@ -14,13 +14,19 @@ const DetailPage4 = () => {
     const [selectedPrograms, setSelectedPrograms] = useState([]);
 
     const fetchData = useCallback(() => {
-        Papa.parse(finalCsv, {
-            download: true,
-            header: true,
-            complete: (results) => {
-                processCSVData(results.data);
-            },
-        });
+        fetch('/final.csv')
+            .then(response => response.text())
+            .then(csvData => {
+                Papa.parse(csvData, {
+                    header: true,
+                    complete: (results) => {
+                        processCSVData(results.data);
+                    },
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching CSV file:', error);
+            });
     }, []);
 
     useEffect(() => {

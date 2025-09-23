@@ -4,7 +4,6 @@ import Papa from 'papaparse';
 import Sidebar5 from './Sidebar5';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import csvFilePath from './final.csv';
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -17,7 +16,7 @@ const DetailPage5 = () => {
 
   useEffect(() => {
     console.log('Fetching CSV data...');
-    fetch(csvFilePath)
+    fetch('/final.csv')
       .then(response => response.text())
       .then(csvData => {
         console.log('CSV data fetched:', csvData);

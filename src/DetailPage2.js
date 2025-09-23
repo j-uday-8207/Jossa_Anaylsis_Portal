@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import Sidebar from './Sidebar2';
-import csvFile from './final.csv';
 import { useNavigate } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
 import './DetailPage2.css';
@@ -17,7 +16,7 @@ const DetailPage2 = () => {
     const [classification, setClassification] = useState('All');
 
     useEffect(() => {
-        fetch(csvFile)
+        fetch('/final.csv')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

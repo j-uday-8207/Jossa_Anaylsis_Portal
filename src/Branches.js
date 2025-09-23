@@ -3,7 +3,6 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import Papa from 'papaparse';
 import { useNavigate } from 'react-router-dom';
-import csvFile from './final.csv';
 import './Branches.css';
 
 ChartJS.register(
@@ -25,7 +24,7 @@ const Branches = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(csvFile)
+    fetch('/final.csv')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
