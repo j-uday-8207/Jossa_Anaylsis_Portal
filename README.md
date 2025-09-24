@@ -11,6 +11,7 @@ Frontend: React<br>
 Backend: Node.js<br>
 Visualization: Charts.js<br>
 Data Retrieval and Parsing : Python, Selenium, Papaparse<br>
+Deployed : Vercel
 
 ### <pre>`Installation Steps: `</pre>
 
