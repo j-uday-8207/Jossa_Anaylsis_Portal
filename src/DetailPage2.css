@@ -121,7 +121,8 @@ h2 {
     width: 100%; /* Ensure full width */
     max-width: 1000px; /* Limit maximum width if needed */
     margin-bottom: 20px;
-    font-size: 10px;
+    font-size: 12px; /* Improved font size for better readability */
+    border: 1px solid rgba(255,255,255,0.1); /* Subtle border for definition */
 }
 
 .chartjs-size-monitor {

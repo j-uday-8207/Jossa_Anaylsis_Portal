@@ -5,10 +5,10 @@ import HomePage from './HomePage';
 import DetailPage from './DetailPage';
 import DetailPage2 from './DetailPage2';
 import DetailPage6 from './DetailPage6';
+import VisualizationPage from './VisualizationPage';
 import DetailPage3 from './DetailPage3';
 import DetailPage4 from './DetailPage4';
 import DetailPage5 from './DetailPage5';
-
 import Branches from './Branches';
 import './App.css';
 
@@ -29,6 +29,7 @@ const App = () => {
         <Route path= "/DetailPage3" element={<DetailPage3/>}/>
         <Route path= "/DetailPage4" element={<DetailPage4/>}/>
         <Route path= "/DetailPage5" element={<DetailPage5/>}/>
+        <Route path= "/visualizations" element={<VisualizationPage/>}/>
         
         
         

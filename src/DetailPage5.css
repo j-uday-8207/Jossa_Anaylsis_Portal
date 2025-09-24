@@ -30,7 +30,10 @@
   height: 100%;
   display: flex;
   overflow-x: auto;
-
+  background-color: #2c2f36; /* Dark background for better contrast */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .chart-inner-container {

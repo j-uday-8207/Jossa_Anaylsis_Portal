@@ -3,7 +3,8 @@ import './DetailPage.css';
 import './Sidebar.css'; // Make sure this is imported
 import Papa from 'papaparse';
 import Sidebar from './Sidebar';
-// Ensure this path is correct
+import Header from './Header';
+
 
 const DetailPage = () => {
   const [choiceData, setChoiceData] = useState(null);
@@ -64,9 +65,7 @@ const DetailPage = () => {
 
   return (
     <div className="detail-page">
-      <header className="header">
-        <h1>Josaa Analysis Portal</h1>
-      </header>
+      <Header showBackButton={true} backLink="/" />
       <div className="content-wrapper">
         <div className="sidebar-container">
           <Sidebar setChoiceData={setChoiceData} />
@@ -99,6 +98,8 @@ const DetailPage = () => {
               ))}
             </div>
           )}
+          
+          
         </div>
       </div>
     </div>

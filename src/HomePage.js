@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 const cards = [
   {
@@ -12,6 +13,11 @@ const cards = [
     title: "Which is the ONE for you?",
     description: "Tell us your rank and preferred academic program and we will let you know where you might end up going college to! Thrilling, right?",
     link: "/DetailPage6"
+  },
+  {
+    title: "Advanced Data Visualizations",
+    description: "Discover interactive heat maps, Sankey diagrams, geographic patterns, bubble charts, and time-series animations! Explore JOSAA data like never before with cutting-edge visualizations",
+    link: "/visualizations"
   },
   {
     title: "How have dual degree programs trends changed over the years?",
@@ -54,44 +60,10 @@ const Card = ({ title, description, link }) => (
   </div>
 );
 
-const AboutUsModal = ({ onClose }) => (
-  <div className="homepage-modal">
-    <div className="homepage-modal-content">
-      <span className="homepage-close" onClick={onClose}>&times;</span>
-      <h2>About Us</h2>
-      <div className="homepage-profile">
-        <div className="homepage-profile-item">
-          <img src="/uday.jpg" alt="Uday Jain" className="homepage-profile-image" />
-          <p>Uday Jain</p>
-        </div>
-        <div className="homepage-profile-item">
-          <img src="/shrutee.jpg" alt="Shrutee Prakash Dalai" className="homepage-profile-image" />
-          <p>Shrutee Prakash Dalai</p>
-        </div>
-  <div className="homepage-profile-item">
-          <img src="/Saumya.jpg" alt="Saumya Tripathi" className="homepage-profile-image" />
-          <p>Saumya Tripathi</p>
-        </div>
-      </div>
-      <p>This portal is developed by Uday Jain, Shrutee Prakash Dalai and Saumya Tripathi</p>
-      <p>Contact us at: j.uday@iitg.ac.in / d.shrutee@iitg.ac.in / t.saumya@iitg.ac.in</p>
-    </div>
-  </div>
-);
-
 const HomePage = () => {
-  const [showAboutUs, setShowAboutUs] = React.useState(false);
-
-  const toggleAboutUs = () => {
-    setShowAboutUs(!showAboutUs);
-  };
-
   return (
     <div>
-      <header className="homepage-header">
-        <h1>Josaa Analysis Portal</h1>
-        <button className="homepage-about-button" onClick={toggleAboutUs}>About Us</button>
-      </header>
+      <Header />
       <div className="homepage-container">
         <div className="homepage-card-container">
           {cards.map((card, index) => (
@@ -99,7 +71,6 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-      {showAboutUs && <AboutUsModal onClose={toggleAboutUs} />}
     </div>
   );
 }

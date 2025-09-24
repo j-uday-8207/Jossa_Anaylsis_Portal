@@ -1,0 +1,382 @@
+/* Advanced Visualizations CSS */
+.advanced-visualizations {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  background: transparent;
+}
+
+/* Header */
+.viz-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.viz-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ff5722, #ffeb3b, #4caf50, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(90deg); }
+}
+
+.viz-header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Loading State */
+.advanced-viz-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #ffffff;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ff5722;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tabs */
+.viz-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.viz-tab {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 12px 24px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.viz-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.viz-tab:hover::before {
+  left: 100%;
+}
+
+.viz-tab:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.viz-tab.active {
+  background: linear-gradient(45deg, #ff5722, #673ab7);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Content */
+.viz-content {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Visualization Containers */
+.visualization-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.visualization-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff5722, #ffeb3b, #4caf50, #2196f3, #9c27b0);
+  animation: colorFlow 4s ease-in-out infinite;
+}
+
+@keyframes colorFlow {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+.visualization-container h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.visualization-container h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(45deg, #ff5722, #ffeb3b);
+  border-radius: 2px;
+}
+
+/* No Data State */
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+/* Chart Styling Overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.recharts-text {
+  fill: white !important;
+}
+
+.recharts-legend-item-text {
+  color: white !important;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-bar {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.recharts-line {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.recharts-dot {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Plotly Chart Container */
+.js-plotly-plot {
+  background: transparent !important;
+}
+
+.plotly .modebar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+.plotly .modebar-btn {
+  color: white !important;
+}
+
+.plotly .modebar-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Interactive Elements */
+.viz-tab:focus,
+.visualization-container:focus-within {
+  outline: 2px solid rgba(255, 87, 34, 0.5);
+  outline-offset: 2px;
+}
+
+/* Hover Effects */
+.visualization-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .advanced-visualizations {
+    padding: 0 1rem;
+  }
+  
+  .viz-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .advanced-visualizations {
+    margin: 1rem auto;
+  }
+  
+  .viz-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .viz-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .viz-header p {
+    font-size: 1rem;
+  }
+  
+  .viz-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .viz-tab {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .visualization-container {
+    padding: 1.5rem;
+  }
+  
+  .visualization-container h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .viz-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .viz-tab {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .visualization-container {
+    padding: 1rem;
+  }
+  
+  .visualization-container h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Custom Scrollbar for Chart Containers */
+.visualization-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.visualization-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.visualization-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 87, 34, 0.7);
+  border-radius: 3px;
+}
+
+.visualization-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 87, 34, 0.9);
+}
+
+/* Animation for chart transitions */
+.viz-content > div {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Enhanced tooltip styles */
+.recharts-tooltip-content {
+  background: rgba(40, 44, 52, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px);
+}
+
+.recharts-tooltip-label {
+  color: #ffeb3b !important;
+  font-weight: 600 !important;
+}
+
+.recharts-tooltip-item {
+  color: white !important;
+}

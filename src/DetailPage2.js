@@ -104,17 +104,29 @@ const DetailPage2 = () => {
         });
 
         const institutes = Array.from(new Set(filteredData.map(row => row.Institute)));
-        const chartDataSets = institutes.map(institute => {
+        const chartDataSets = institutes.map((institute, index) => {
             const data = selectedYears.map(year => {
                 const yearData = yearlyData[year] || [];
                 const instituteData = yearData.find(item => item.Institute === institute);
                 return instituteData ? instituteData.MaxClosingRank : null;
             });
+            const color = getRandomColor();
             return {
-                label: institute,
+                label: institute.replace('Indian Institute  of Technology ', 'IIT '),
                 data,
-                borderColor: getRandomColor(),
+                borderColor: color,
+                backgroundColor: color + '20',
                 fill: false,
+                tension: 0.1,
+                borderWidth: 3,
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                pointBorderWidth: 2,
+                pointHoverBorderWidth: 3,
+                pointBackgroundColor: color,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: color
             };
         });
 
@@ -138,13 +150,118 @@ const DetailPage2 = () => {
         navigate('/');
     };
 
-    const getRandomColor = () => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
+    const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: `${classification} Closing Rank Trends`,
+                font: {
+                    size: 18,
+                    weight: 'bold'
+                },
+                color: '#ffffff'
+            },
+            legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                    font: {
+                        size: 12
+                    },
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                    color: '#ffffff'
+                }
+            },
+            tooltip: {
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                titleColor: '#fff',
+                bodyColor: '#fff',
+                borderColor: '#3498db',
+                borderWidth: 1,
+                cornerRadius: 8,
+                displayColors: true,
+                callbacks: {
+                    label: function(context) {
+                        return `${context.dataset.label}: ${context.parsed.y.toLocaleString()}`;
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Year',
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    color: '#ffffff'
+                },
+                grid: {
+                    display: true,
+                    color: 'rgba(255,255,255,0.2)'
+                },
+                ticks: {
+                    color: '#ffffff',
+                    font: {
+                        size: 12
+                    }
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Closing Rank',
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    color: '#ffffff'
+                },
+                grid: {
+                    display: true,
+                    color: 'rgba(255,255,255,0.2)'
+                },
+                ticks: {
+                    color: '#ffffff',
+                    font: {
+                        size: 12
+                    },
+                    callback: function(value) {
+                        return value.toLocaleString();
+                    }
+                }
+            }
+        },
+        interaction: {
+            intersect: false,
+            mode: 'index'
+        },
+        elements: {
+            line: {
+                tension: 0.1,
+                borderWidth: 3
+            },
+            point: {
+                radius: 5,
+                hoverRadius: 8,
+                borderWidth: 2,
+                hoverBorderWidth: 3
+            }
         }
-        return color;
+    };
+
+    const getRandomColor = () => {
+        const colors = [
+            '#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6',
+            '#1abc9c', '#34495e', '#e67e22', '#95a5a6', '#8e44ad',
+            '#16a085', '#27ae60', '#2980b9', '#d35400', '#c0392b'
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
     };
 
     return (
@@ -181,9 +298,8 @@ const DetailPage2 = () => {
                         </button>
                     </div>
                     {selectedYears.length > 0 && chartData.datasets && chartData.datasets.length > 0 && (
-                        <div className="chart-container2">
-                            <h2>Chart</h2>
-                            <Line data={chartData} options={{ responsive: true }} />
+                        <div className="chart-container2" style={{ height: '500px', marginTop: '30px' }}>
+                            <Line data={chartData} options={chartOptions} />
                         </div>
                     )}
                 </div>

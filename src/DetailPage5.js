@@ -70,12 +70,63 @@ const DetailPage5 = () => {
   }, [choiceData, originalData, programsToShow]);
 
   const chartData = {
-    labels: averageRanks.map(item => item.program),
+    labels: averageRanks.map(item => 
+      item.program.length > 30 
+        ? item.program.substring(0, 30) + '...' 
+        : item.program
+    ),
     datasets: [
       {
         label: 'Average Rank',
         data: averageRanks.map(item => item.avgRank),
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        backgroundColor: averageRanks.map((_, index) => {
+          const colors = [
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(255, 205, 86, 0.8)',
+            'rgba(153, 102, 255, 0.8)',
+            'rgba(255, 159, 64, 0.8)',
+            'rgba(199, 199, 199, 0.8)',
+            'rgba(83, 102, 255, 0.8)',
+            'rgba(255, 99, 255, 0.8)',
+            'rgba(99, 255, 132, 0.8)'
+          ];
+          return colors[index % colors.length];
+        }),
+        borderColor: averageRanks.map((_, index) => {
+          const colors = [
+            'rgba(75, 192, 192, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 205, 86, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(199, 199, 199, 1)',
+            'rgba(83, 102, 255, 1)',
+            'rgba(255, 99, 255, 1)',
+            'rgba(99, 255, 132, 1)'
+          ];
+          return colors[index % colors.length];
+        }),
+        borderWidth: 2,
+        borderRadius: 8,
+        borderSkipped: false,
+        hoverBackgroundColor: averageRanks.map((_, index) => {
+          const colors = [
+            'rgba(75, 192, 192, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 205, 86, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(199, 199, 199, 1)',
+            'rgba(83, 102, 255, 1)',
+            'rgba(255, 99, 255, 1)',
+            'rgba(99, 255, 132, 1)'
+          ];
+          return colors[index % colors.length];
+        })
       },
     ],
   };
@@ -85,29 +136,89 @@ const DetailPage5 = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        display: false
       },
       title: {
         display: true,
-        text: 'Average Rank of Students Admitted to IITs in Different Branches',
+        text: `Average Rank Analysis - Top ${programsToShow} Programs (${choiceData?.year || 'Select Year'})`,
+        font: {
+          size: 18,
+          weight: 'bold'
+        },
+        color: '#ffffff',
+        padding: 20
       },
+      tooltip: {
+        backgroundColor: 'rgba(0,0,0,0.9)',
+        titleColor: '#fff',
+        bodyColor: '#fff',
+        borderColor: '#3498db',
+        borderWidth: 1,
+        cornerRadius: 10,
+        displayColors: true,
+        callbacks: {
+          title: function(context) {
+            const fullProgram = averageRanks[context[0].dataIndex].program;
+            return fullProgram;
+          },
+          label: function(context) {
+            return `Average Rank: ${Math.round(context.parsed.y).toLocaleString()}`;
+          }
+        }
+      }
     },
     scales: {
       x: {
         title: {
           display: true,
-          text: 'Academic Programs'
+          text: 'Academic Programs',
+          font: {
+            size: 14,
+            weight: 'bold'
+          },
+          color: '#ffffff'
+        },
+        ticks: {
+          maxRotation: 45,
+          minRotation: 0,
+          font: {
+            size: 11
+          },
+          color: '#ffffff'
+        },
+        grid: {
+          display: false
         }
       },
       y: {
         title: {
           display: true,
-          text: 'Average Rank'
+          text: 'Average Rank',
+          font: {
+            size: 14,
+            weight: 'bold'
+          },
+          color: '#ffffff'
         },
         ticks: {
-          beginAtZero: true, // Ensure the y-axis starts from zero
+          beginAtZero: false,
+          font: {
+            size: 12
+          },
+          color: '#ffffff',
+          callback: function(value) {
+            return value.toLocaleString();
+          }
+        },
+        grid: {
+          color: 'rgba(255,255,255,0.2)',
+          lineWidth: 1
         }
       }
+    },
+    interaction: {
+      intersect: false,
+      mode: 'index'
     }
   };
 
@@ -119,12 +230,52 @@ const DetailPage5 = () => {
       <div className="container">
         <Sidebar5 setChoiceData={setChoiceData} originalData={originalData} />
         <div className="content">
-          <h2>Average Rank of Students Admitted to IITs in Different Branches</h2>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+            <h2>Average Rank Analysis by Branch</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <label htmlFor="programs-select" style={{ fontSize: '14px', color: '#2c3e50' }}>
+                Show Programs:
+              </label>
+              <select 
+                id="programs-select"
+                value={programsToShow} 
+                onChange={(e) => setProgramsToShow(parseInt(e.target.value))}
+                style={{
+                  padding: '8px 12px',
+                  border: '2px solid #3498db',
+                  borderRadius: '6px',
+                  backgroundColor: '#fff',
+                  color: '#2c3e50',
+                  fontSize: '14px',
+                  cursor: 'pointer'
+                }}
+              >
+                <option value={5}>Top 5</option>
+                <option value={10}>Top 10</option>
+                <option value={15}>Top 15</option>
+                <option value={20}>Top 20</option>
+                <option value={25}>Top 25</option>
+              </select>
+            </div>
+          </div>
           {averageRanks.length > 0 && (
-            <div className="chart-container">
-              <div className="chart-inner-container">
+            <div className="chart-container" style={{ height: '600px', marginTop: '30px' }}>
+              <div className="chart-inner-container" style={{ height: '100%' }}>
                 <Bar data={chartData} options={chartOptions} />
               </div>
+            </div>
+          )}
+          {choiceData && averageRanks.length === 0 && (
+            <div style={{ 
+              textAlign: 'center', 
+              padding: '40px', 
+              backgroundColor: '#f8f9fa', 
+              borderRadius: '10px',
+              marginTop: '30px',
+              color: '#6c757d'
+            }}>
+              <h3>No data available for the selected criteria</h3>
+              <p>Please try selecting a different year from the sidebar.</p>
             </div>
           )}
         </div>

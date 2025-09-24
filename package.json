@@ -11,13 +11,17 @@
     "chart.js": "^4.4.3",
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
+    "d3": "^7.9.0",
     "express": "^4.19.2",
     "papaparse": "^5.4.1",
+    "plotly.js": "^3.1.0",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "recharts": "^3.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

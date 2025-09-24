@@ -98,23 +98,52 @@ const DetailPage3 = () => {
                         data={prepareChartData()} 
                         options={{
                             responsive: true,
-                            maintainAspectRatio: false, // Ensure the chart respects its container size
+                            maintainAspectRatio: false,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Evolution of Cutoff Ranks for Different Categories',
+                                    font: {
+                                        size: 16,
+                                        weight: 'bold'
+                                    },
+                                    color: '#ffffff'
+                                },
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        color: '#ffffff'
+                                    }
+                                }
+                            },
                             scales: {
                                 y: {
                                     beginAtZero: true,
                                     ticks: {
                                         stepSize: 5000,
+                                        color: '#ffffff'
                                     },
                                     title: {
                                         display: true,
                                         text: 'Rank',
+                                        color: '#ffffff'
                                     },
+                                    grid: {
+                                        color: 'rgba(255,255,255,0.2)'
+                                    }
                                 },
                                 x: {
                                     title: {
                                         display: true,
                                         text: 'Year',
+                                        color: '#ffffff'
                                     },
+                                    ticks: {
+                                        color: '#ffffff'
+                                    },
+                                    grid: {
+                                        color: 'rgba(255,255,255,0.2)'
+                                    }
                                 },
                             },
                         }} 

@@ -121,26 +121,18 @@ const DetailPage4 = () => {
                         <Line 
                             data={prepareChartData()} 
                             options={{
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                        ticks: {
-                                            stepSize: 1000,
-                                        },
-                                        title: {
-                                            display: true,
-                                            text: 'Number of Students',
-                                        },
-                                    },
-                                    x: {
-                                        title: {
-                                            display: true,
-                                            text: 'Year',
-                                        },
-                                    },
-                                },
+                                responsive: true,
                                 maintainAspectRatio: false,
                                 plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Dual Degree Program Trends',
+                                        font: {
+                                            size: 16,
+                                            weight: 'bold'
+                                        },
+                                        color: '#ffffff'
+                                    },
                                     legend: {
                                         display: selectedPrograms.length !== 1,
                                         labels: {
@@ -149,8 +141,39 @@ const DetailPage4 = () => {
                                             font: {
                                                 size: 10,
                                             },
+                                            color: '#ffffff'
                                         },
                                     }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            stepSize: 1000,
+                                            color: '#ffffff'
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Number of Students',
+                                            color: '#ffffff'
+                                        },
+                                        grid: {
+                                            color: 'rgba(255,255,255,0.2)'
+                                        }
+                                    },
+                                    x: {
+                                        title: {
+                                            display: true,
+                                            text: 'Year',
+                                            color: '#ffffff'
+                                        },
+                                        ticks: {
+                                            color: '#ffffff'
+                                        },
+                                        grid: {
+                                            color: 'rgba(255,255,255,0.2)'
+                                        }
+                                    },
                                 }
                             }} 
                         />
